@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mabruk Fire Safety</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     * {
@@ -27,11 +27,21 @@
       color: white;
       text-align: center;
       padding: 30px 20px;
+      animation: slideFade 1.2s ease-in-out forwards;
+      opacity: 0;
     }
 
     header h1 {
       font-size: 3em;
       font-weight: 600;
+      animation: fadeInText 1.5s ease-in-out 0.5s forwards;
+      opacity: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      animation: fadeInText 1.5s ease-in-out 0.8s forwards;
+      opacity: 0;
     }
 
     nav {
@@ -60,8 +70,14 @@
       padding: 60px 30px;
       max-width: 1200px;
       margin: auto;
-      transition: all 0.5s ease-in-out;
-      animation: fadeInUp 0.8s ease;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .about, .services, .contact {
@@ -81,27 +97,46 @@
     .services ul {
       list-style: none;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .services li {
-      padding: 12px 0;
+      padding: 16px 20px;
       font-size: 1.2em;
+      background: #f8f8f8;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
       position: relative;
+      z-index: 1;
     }
 
     .services li:hover::after {
       content: attr(data-tooltip);
       position: absolute;
-      left: 0;
-      top: 100%;
-      margin-top: 5px;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
       background: #c0392b;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 5px;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 1em;
       white-space: nowrap;
-      font-size: 0.9em;
-      opacity: 0.95;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .services li:hover {
+      transform: scale(1.1) translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    .services li:hover ~ li {
+      transform: translateY(15px);
     }
 
     .contact p {
@@ -123,24 +158,6 @@
       background-color: #e74c3c;
     }
 
-    #slider {
-      position: fixed;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 280px;
-      background-color: #e74c3c;
-      border-radius: 10px 0 0 10px;
-      box-shadow: -4px 0 12px rgba(0,0,0,0.15);
-      overflow: hidden;
-      z-index: 999;
-    }
-
-    #slider img {
-      width: 100%;
-      display: block;
-    }
-
     footer {
       background-color: #1e1e1e;
       color: white;
@@ -148,10 +165,21 @@
       padding: 15px;
     }
 
-    @keyframes fadeInUp {
+    @keyframes slideFade {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInText {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -185,12 +213,12 @@
   <section id="services" class="services">
     <h2>Our Products & Services</h2>
     <ul>
-      <li data-tooltip="Used to extinguish various types of fire safely.">Fire Extinguishers</li>
-      <li data-tooltip="Used to control water flow in sprinkler systems.">Butterfly Valves</li>
-      <li data-tooltip="Automatically activates when it detects heat to release water.">Sprinkler Systems</li>
-      <li data-tooltip="Detects smoke and warns occupants.">Smoke Alarms</li>
-      <li data-tooltip="Installation of fire safety systems for homes and businesses.">Installation Services</li>
-      <li data-tooltip="Routine checks to ensure equipment functions properly.">Maintenance & Inspection</li>
+      <li data-tooltip="Used to extinguish various types of fire safely.">🔥 Fire Extinguishers</li>
+      <li data-tooltip="Controls water flow in fire protection systems.">🌀 Butterfly Valves</li>
+      <li data-tooltip="Automatically activates and releases water when it detects heat.">💧 Sprinkler Systems</li>
+      <li data-tooltip="Detects smoke and alerts occupants with sound.">🚨 Smoke Alarms</li>
+      <li data-tooltip="Professional setup of safety systems for homes and businesses.">🛠️ Installation Services</li>
+      <li data-tooltip="Routine checks to ensure all fire equipment works properly.">🔍 Maintenance & Inspection</li>
     </ul>
   </section>
 
@@ -201,15 +229,28 @@
     <a href="tel:+918879329976" class="btn">Call Now</a>
   </section>
 
-  <!-- Slider (Image on right) -->
-  <div id="slider">
-    <img src="https://www.w3schools.com/w3images/fire.jpg" alt="Fire Safety Awareness">
-  </div>
-
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Mabruk Fire Safety | All rights reserved.</p>
   </footer>
+
+  <!-- Scroll Animations Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
 
 </body>
 </html>
