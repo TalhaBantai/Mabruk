@@ -1,0 +1,125 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+.site-header {
+  background-color: #c0392b;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+.site-header h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+.site-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #e74c3c;
+  gap: 10px;
+}
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.site-nav a:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+main {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s forwards ease;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.tooltip-item {
+  position: relative;
+  margin-bottom: 20px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tooltip-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  z-index: 2;
+}
+.tooltip-item:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #c0392b;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  white-space: normal;
+  width: 100%;
+  z-index: 3;
+  animation: fadeInUp 0.4s ease-out;
+}
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-item {
+  margin-bottom: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.service-item:hover {
+  background: #fff3f3;
+  transform: scale(1.02);
+}
+.service-item summary {
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+.service-item p {
+  margin-top: 10px;
+  padding-left: 10px;
+  line-height: 1.5;
+}
+.animated-heading {
+  animation: slideFadeIn 0.8s ease-out both;
+}
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
