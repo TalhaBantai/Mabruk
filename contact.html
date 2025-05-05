@@ -1,42 +1,119 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mabruk Fire Safety</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mabruk Fire Safety - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact Section Styles */
+        .contact-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr; /* Stack on smaller screens */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-details:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #eee; /* Darker on hover */
+        }
+
+        .contact-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .contact-details strong {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .call-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .call-button:hover {
+            background-color: #111; /* Darker on hover */
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .contact-info {
+                grid-template-columns: 1fr; /* Two columns on larger screens */
+            }
+        }
+    </style>
 </head>
 <body>
-  
-<header class="site-header">
-  <h1>Mabruk Fire Safety</h1>
-  <p>Your trusted partner in fire safety equipment & installation</p>
-</header>
-<nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
 
-  <main><h2>Contact Us</h2><p>Phone: <strong>8879329976</strong></p><p>Email: info@mabrukfiresafety.com</p><p>Address: 123 Safety Lane, Secure City</p></main>
-  
-<footer>
-  <p>&copy; 2025 Mabruk Fire Safety | All rights reserved.</p>
-</footer>
+    <header class="site-header">
+        <div>
+            <h1>Mabruk Fire Safety</h1>
+            <p>Your trusted partner in fire safety equipment & installation</p>
+        </div>
+    </header>
 
-  <script src="main.js"></script>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <div class="contact-container">
+            <div class="contact-info">
+              <div class="contact-details">
+                <h2>Contact Information</h2>
+                <p><strong>K. Kashan</strong></p>
+                <p>Managing Director</p>
+                <p>Phone: <strong>91+ 8879329976</strong> <a href="tel:+918879329976" class="call-button">Call</a></p>
+                <p>Phone: <strong>91+ 9004579847</strong> <a href="tel:+919004579847" class="call-button">Call</a></p>
+                <p>Email: <strong>mabrukfires@yahoo.com</strong></p>
+                <p>Address: <strong>305, 3rd floor bldg no 11, BKC, Mumbai - 400051</strong></p>
+                <p>Instagram: <a href="https://www.instagram.com/Mabruk.fire">Mabruk.fire</a></p>
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mabruk Fire Safety | All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
