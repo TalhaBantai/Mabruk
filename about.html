@@ -1,23 +1,117 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mabruk Fire Safety</title>
+    <title>Mabruk Fire Safety - About Us</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-        @keyframes fadeOut {
+        @keyframes fadeIn {
             from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
-            to {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+        }
+
+        .about-section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #333; /* Changed to dark gray */
+        }
+
+        .core-services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .service-category {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease; /* Added transition */
+        }
+
+        .service-category:hover {
+            background-color: #eee; /* Darken on hover */
+            transform: scale(1.02); /* Scale up slightly on hover */
+        }
+
+        .service-category h4 {
+            margin-bottom: 10px;
+            color: #333; /* Changed to dark gray */
+        }
+
+        .service-category ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .service-category ul li {
+            margin-bottom: 5px;
+        }
+
+        .additional-services {
+            margin-top: 20px;
+        }
+
+        .additional-services ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .industries-served {
+            margin-top: 20px;
+        }
+
+        .industries-served ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .why-choose-us {
+            margin-top: 20px;
+        }
+
+        .why-choose-us ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .why-choose-us ul li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+            color: #333; /* Changed from green to dark gray */
+        }
+
+        .why-choose-us ul li:before {
+            content: "\\2713";
+            /* Checkmark */
+            position: absolute;
+            left: 0;
+            color: #333;
+            /* Changed from green to dark gray */
         }
     </style>
 </head>
+
 <body>
 
     <header class="site-header">
@@ -34,9 +128,105 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <main>
-        <h2>About Us</h2>
-        <p>Mabruk Fire Safety has been delivering exceptional fire safety solutions for over a decade. Our mission is to safeguard lives and property through innovative equipment and professional service. Our team of experts stays up to date with the latest in fire safety technology and codes, ensuring total peace of mind for our clients.</p>
+    <main class="fade-in">
+        <div class="about-section">
+            <h2>About Mabruk Fire Safety and Security System</h2>
+            <p>
+                Mabruk Fire Safety and Security System is a leading provider of comprehensive fire protection and security solutions. With a firm commitment to safety, quality, and innovation, Mabruk specializes in the design, supply, installation, testing, commissioning, and maintenance of fire fighting and fire alarm systems for residential, commercial, and industrial sectors.
+            </p>
+        </div>
+
+        <div class="vision-mission">
+            <div class="about-section">
+                <h3>Our Vision</h3>
+                <p>
+                    To be a trusted name in fire safety and security solutions, ensuring the protection of lives and property through cutting-edge technology and expert services.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>
+                    To deliver high-quality, reliable, and cost-effective fire protection systems while upholding the highest standards of safety and customer satisfaction.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="about-section">
+            <h3>Our Core Services</h3>
+            <div class="core-services">
+                <div class="service-category">
+                    <h4>Fire Fighting Systems</h4>
+                    <p>
+                        Mabruk provides complete fire fighting system solutions that meet local and international safety codes and standards.
+                    </p>
+                    <ul>
+                        <li>Fire Pump Systems: Supply, installation, and maintenance of electric, diesel, and jockey pumps.</li>
+                        <li>Sprinkler Systems: Automatic fire sprinkler systems for commercial and residential buildings.</li>
+                        <li>Fire Hose Reel Systems: Design and installation of hose reels and landing valves.</li>
+                        <li>Dry/Wet Riser Systems: Installation of riser systems tailored to building requirements.</li>
+                        <li>Foam Suppression Systems: Ideal for flammable liquid hazards.</li>
+                        <li>FM-200 / Novec Systems: Clean agent systems for data centers and sensitive environments.</li>
+                        <li>Portable & Wheeled Fire Extinguishers: Supply and servicing of all types (CO2, Dry Powder, Foam, etc.).</li>
+                        <li>Hydrant Systems: Complete external and internal hydrant networks.</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h4>Fire Alarm Systems</h4>
+                    <p>
+                        Comprehensive solutions for early detection and emergency response.
+                    </p>
+                    <ul>
+                        <li>Conventional Fire Alarm Systems</li>
+                        <li>Addressable Fire Alarm Systems</li>
+                        <li>Smoke and Heat Detectors</li>
+                        <li>Manual Call Points</li>
+                        <li>Fire Alarm Control Panels</li>
+                        <li>Sounders and Strobes</li>
+                        <li>Emergency and Exit Lighting</li>
+                        <li>Voice Evacuation Systems</li>
+                    </ul>
+                    <p>All fire alarm systems are designed and installed in compliance with NFPA and Civil Defense regulations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section additional-services">
+            <h3>Additional Services</h3>
+            <ul>
+                <li>System Design and Engineering</li>
+                <li>Authority Approvals and Certifications</li>
+                <li>Annual Maintenance Contracts (AMC)</li>
+                <li>Inspection and Testing</li>
+                <li>Emergency System Upgrades</li>
+                <li>Training and Fire Drills</li>
+            </ul>
+        </div>
+
+        <div class="about-section industries-served">
+            <h3>Industries We Serve</h3>
+            <ul>
+                <li>Residential Buildings</li>
+                <li>Commercial Complexes</li>
+                <li>Industrial Facilities</li>
+                <li>Hospitals and Clinics</li>
+                <li>Educational Institutions</li>
+                <li>Hotels and Resorts</li>
+                <li>Warehouses and Logistics Hubs</li>
+            </ul>
+        </div>
+
+        <div class="about-section why-choose-us">
+            <h3>Why Choose Mabruk:</h3>
+            <ul>
+                <li>Certified and experienced engineers and technicians</li>
+                <li>End-to-end project handling from design to maintenance</li>
+                <li>Fast response and 24/7 emergency support</li>
+                <li>Strong track record with successful projects across the region</li>
+            </ul>
+        </div>
     </main>
 
     <footer>
@@ -45,4 +235,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
