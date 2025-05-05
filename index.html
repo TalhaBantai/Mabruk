@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
+      overflow: hidden;
     }
 
     header {
@@ -78,6 +79,89 @@
       width: 100%;
       bottom: 0;
     }
+
+    /* Fire Animation */
+    #fire-container {
+      position: absolute;
+      bottom: 100px;
+      right: 50px;
+      width: 150px;
+      height: 150px;
+      background: url('https://www.transparenttextures.com/patterns/fancy-pattern.png') no-repeat center center;
+      background-size: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+
+    .extinguisher {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      width: 50px;
+      height: 80px;
+      background-color: #d9534f;
+      border-radius: 5px;
+      transform: rotate(45deg);
+      animation: extinguisherAnim 2s infinite;
+    }
+
+    /* Fire animation */
+    @keyframes fireAnim {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    .fire {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      background-color: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+      animation: fireAnim 1s infinite;
+    }
+
+    /* Extinguisher Animation */
+    @keyframes extinguisherAnim {
+      0% {
+        transform: rotate(45deg);
+      }
+      50% {
+        transform: rotate(-45deg);
+      }
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+
+    /* Button to trigger fire */
+    #extinguish-btn {
+      padding: 10px 20px;
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    #extinguish-btn:hover {
+      background-color: #c9302c;
+    }
+
   </style>
 </head>
 <body>
@@ -120,10 +204,32 @@
     <p>Phone: <strong>8879329976</strong></p>
   </section>
 
+  <!-- Fire Animation and Extinguisher -->
+  <div id="fire-container">
+    <div class="fire"></div>
+    <div class="extinguisher"></div>
+  </div>
+
+  <!-- Fire Extinguish Button -->
+  <button id="extinguish-btn" onclick="extinguishFire()">Extinguish Fire</button>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Mabruk Fire Safety | All rights reserved.</p>
   </footer>
 
+  <script>
+    function extinguishFire() {
+      document.querySelector('.fire').style.animation = 'none';  // Stop the fire animation
+      document.querySelector('.fire').style.opacity = 0;  // Hide the fire
+
+      // Add a little delay before the fire returns
+      setTimeout(function() {
+        document.querySelector('.fire').style.animation = 'fireAnim 1s infinite';  // Restart the fire
+        document.querySelector('.fire').style.opacity = 1;  // Make fire visible again
+      }, 2000);
+    }
+  </script>
+  
 </body>
 </html>
