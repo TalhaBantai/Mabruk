@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mabruk Fire Safety - Contact Us</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Contact Section Styles */
+        /* Contact-specific styles */
         .contact-container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #f8f8f8;
+            background-color: var(--primary-light);
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 5px var(--shadow-color);
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: 1fr; /* Stack on smaller screens */
+            grid-template-columns: 1fr;
             gap: 20px;
             margin-bottom: 20px;
         }
@@ -26,73 +27,125 @@
         .contact-details {
             padding: 15px;
             border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            background-color: var(--card-background);
+            box-shadow: 0 1px 3px var(--shadow-color);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .contact-details:hover {
             transform: scale(1.03);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background-color: #eee; /* Darker on hover */
-        }
-
-        .contact-details h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .contact-details p {
-            margin: 5px 0;
-            color: #555;
-        }
-
-        .contact-details strong {
-            font-weight: bold;
-            color: #222;
+            box-shadow: 0 4px 8px var(--shadow-hover);
+            background-color: #eee; /* Slightly lighter on hover */
         }
 
         .call-button {
             display: inline-block;
-            padding: 10px 15px;
-            background-color: #333;
+            padding: 8px 12px;
+            background-color: var(--primary-color);
             color: white;
-            text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
         }
 
         .call-button:hover {
-            background-color: #111; /* Darker on hover */
-            transform: scale(1.05);
+            background-color: #555; /* Slightly lighter on hover */
         }
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            .contact-info {
-                grid-template-columns: 1fr; /* Two columns on larger screens */
-            }
+        .contact-form {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--card-background);
+            box-shadow: 0 1px 3px var(--shadow-color);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+            color: var(--secondary-light);
+            font-weight: normal;
+            font-size: 0.95em;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .contact-form button:hover {
+            background-color: #555; /* Slightly lighter on hover */
+        }
+
+        /* Grayscale Color Palette */
+        :root {
+            --primary-color: #333;       /* Dark gray for primary elements */
+            --primary-light: #f0f0f0; /* Light gray background */
+            --secondary-color: #555;      /* Medium gray for text */
+            --secondary-light: #888;      /* Lighter gray for details */
+            --background-color: #fff;    /* White page background */
+            --card-background: #f9f9f9;  /* Light gray for cards/forms */
+            --shadow-color: rgba(0,0,0,0.08);
+            --shadow-hover: rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
-
     <header class="site-header">
-        <div>
+        <div class="header-content">
             <h1>Mabruk Fire Safety</h1>
             <p>Your trusted partner in fire safety equipment & installation</p>
         </div>
     </header>
-
+    
     <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="logo-link">
+            <img src="mabruk.notext.png" alt="Mabruk Fire Safety Logo" class="nav-logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
-
+    
     <main>
         <div class="contact-container">
             <div class="contact-info">
@@ -104,16 +157,31 @@
                 <p>Phone: <strong>91+ 9004579847</strong> <a href="tel:+919004579847" class="call-button">Call</a></p>
                 <p>Email: <strong>mabrukfires@yahoo.com</strong></p>
                 <p>Address: <strong>305, 3rd floor bldg no 11, BKC, Mumbai - 400051</strong></p>
-                <p>Instagram: <a href="https://www.instagram.com/Mabruk.fire">Mabruk.fire</a></p>
-              </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form id="contactForm" action="/send-message" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="formStatus" class="form-status" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
             </div>
         </div>
     </main>
-
+    
     <footer>
         <p>&copy; 2025 Mabruk Fire Safety | All rights reserved.</p>
     </footer>
-
+    
     <script src="main.js"></script>
 </body>
 </html>
+
+
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mabruk Fire Safety</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
    @keyframes fadeOut {
     from {
@@ -16,21 +17,34 @@
       transform: translateY(-30px);
     }
    }
+   /* Remove any page-specific font size overrides */
+   @media (max-width: 768px) {
+       .service-item summary,
+       .service-item p {
+           /* Let the global styles handle these */
+           font-size: inherit;
+       }
+   }
    </style>
 </head>
 <body>
     
 <header class="site-header">
-    <div>
+    <div class="header-content">
         <h1>Mabruk Fire Safety</h1>
         <p>Your trusted partner in fire safety equipment & installation</p>
     </div>
 </header>
 <nav class="site-nav">
+  <a href="index.html" class="logo-link">
+    <img src="mabruk.notext.png" alt="Mabruk Fire Safety Logo" class="nav-logo">
+  </a>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
     <main>
@@ -73,3 +87,8 @@
     <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+

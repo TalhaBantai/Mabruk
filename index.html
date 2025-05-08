@@ -5,32 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mabruk Fire Safety</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-}
-</style>
+    /* Ensure consistent text sizing */
+    main h2 {
+      font-size: 1.8em;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    main p {
+      font-size: 1em;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 <body>
-  
 <header class="site-header">
-    <div>
-        <h1>Mabruk Fire Safety</h1>
-        <p>Your trusted partner in fire safety equipment & installation</p>
+    <div class="header-content">
+        <div class="logo-container" style="text-align: center; width: 100%; overflow: hidden;">
+            <img src="whitemabruk.png" alt="Mabruk Fire Safety Logo" class="site-logo home-logo" style="margin: 0 auto; display: block; clip-path: inset(0 0 40px 0);">
+        </div>
+         
     </div>
 </header>
+  
+ 
 <nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" class="logo-link">
+    <img src="mabruk.notext.png" alt="Mabruk Fire Safety Logo" class="nav-logo">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
   <main><h2>Welcome to Mabruk</h2><p>We ensure safety through expert installation of fire protection systems, using only certified, top-quality equipment. Whether you're a homeowner or managing a commercial property, Mabruk Fire Safety provides solutions tailored to your needs.</p></main>
@@ -42,3 +52,8 @@
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
